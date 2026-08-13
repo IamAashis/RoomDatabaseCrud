@@ -64,16 +64,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupAdapter() {
 
-        adapter = TodoAdapter(
-            onEdit = { showEditDialog(it) },
-            onDelete = { todoViewModel.deleteTodo(it) }
-        )
-
-        recyclerView?.layoutManager = LinearLayoutManager(this)
-        recyclerView?.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         todoViewModel.todos.observe(this) { data ->
-            adapter.submitList(data)
+            adapter = TodoAdapter(
+                todos = data,
+                onEdit = { showEditDialog(it) },
+                onDelete = { todoViewModel.deleteTodo(it) }
+            )
+            recyclerView.adapter = adapter
         }
     }
 
