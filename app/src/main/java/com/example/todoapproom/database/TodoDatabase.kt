@@ -5,9 +5,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.todoapproom.Constants.DatabaseConstants
 
-@Database(entities = [Todo::class, Users::class], version = 2)
+@Database(entities = [Todo::class, Users::class], version = 4)
+@TypeConverters(Converters::class)
 abstract class TodoDatabase : RoomDatabase() {
 
     abstract fun todoDao(): TodoDao
@@ -21,7 +23,9 @@ abstract class TodoDatabase : RoomDatabase() {
                     context.applicationContext,
                     TodoDatabase::class.java,
                     DatabaseConstants.TABLENAME
-                ).build()
+                )
+                    .addMigrations(MIGRATION_2_3, MIGRATION_3_4)
+                    .build()
                 INSTANCE = instance
                 instance
             }

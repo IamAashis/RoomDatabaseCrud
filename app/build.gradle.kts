@@ -36,6 +36,11 @@ android {
     }
 }
 
+ksp {
+    // writes the schema JSON for each version so migrations can be verified
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
