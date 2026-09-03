@@ -36,10 +36,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.todoapproom" />
+                  <option name="mobileSdkAppId" value="1:16240694633:android:ef8bdb8c11c68ae3a6d9f8" />
+                  <option name="projectId" value="noteapp-10188" />
+                  <option name="projectNumber" value="16240694633" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
